@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+	<title>Form</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<h1>Login Form</h1>
+				<form class="form-group" action="/userdata" method="post">
+					<label for="uname">Name</label>
+					<input class="form-control" type="text" id="uname" name="uname" required autocomplete="on" /><br><br>
+					<label for="pwd">Password</label>
+					<input class="form-control" type="password" id="pwd" name="pwd" required autocomplete="on"/><br><br>
+					<button class="btn btn-primary" type="submit">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			//Note the function inside the submit method is executed first on sensing the submit event before the form submission
+			$('form').submit(function(e){
+				e.preventDefault();//This will prevent the default behaviour of the form i.e. to make use of the url provided in the action attribute of the form
+				console.log($('form').serialize());
+				console.log(JSON.stringify($('form').serialize()));
+				console.log($('form').serializeArray());
+				console.log(JSON.stringify($('form').serializeArray()));
+				$.ajax({
+					url: "/userdata",//url is the location where we want to submit the data
+					type: "post",
+					data: $('form').serialize(),
+					//data: JSON.stringify($('form').serializeArray()),
+					//contentType: "application/x-www-form-urlencoded", //This is the default content type if we use the form action attribute
+					//contentType: "application/json",//If the json content type is not specified then at the server side the json data will not be converted into a javascript object by the bodyparse.json() function
+					success: function(res){
+						console.log("Response received");
+						console.log(res);
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>

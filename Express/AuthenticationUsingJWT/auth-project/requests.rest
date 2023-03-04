@@ -1,0 +1,49 @@
+
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQS5TaWRkaGFydGgiLCJpYXQiOjE2MTI5NTE4ODEsImV4cCI6MTYxMjk1MTkyMX0.HIEJ36vm2dtl8ni0w1hneE2ZM_O3SzdgCZhmcG7hwzY
+
+####################
+
+
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "username": "A.Siddharth"
+}
+
+###
+
+POST http://localhost:4000/token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQS5TaWRkaGFydGgiLCJpYXQiOjE2MTI5NTE4MDh9.fo_P43L3nbEOS_llAJG53-dAGGPBAdduCu7Q1ks6ojk"
+}
+
+###
+
+POST  http://localhost:4000/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQS5TaWRkaGFydGgiLCJpYXQiOjE2MTI5NTE4MDh9.fo_P43L3nbEOS_llAJG53-dAGGPBAdduCu7Q1ks6ojk"
+}
+
+###
+GET  http://localhost:3000/dummy1
+Content-Type: application/json
+
+{
+    "username": "A.Shrikant",
+    "title": "admin"
+}
+
+####################
+POST  http://localhost:3000/dummy2
+Content-Type: application/json
+
+{
+    "username": "A.Shrikant",
+    "title": "admin"
+}

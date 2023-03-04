@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+	<title>Login Page</title>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <link rel="stylesheet" href="/public/css/styles.css"></link>
+    <form   action="/loginHandler" method="post">
+        <label for="uname" >Username</label><br>
+        <input id="uname" name="uname" type="text"><br>
+        <label for="pwd" >Password</label><br>
+        <input id="pwd" name="pwd" type="text"><br><br>
+        <input type="submit" value="Login">
+    </form>
+    <% if(errorMsg!="") { %>
+        <p><%=errorMsg%></p>
+    <% } %>
+</body>
+</html>

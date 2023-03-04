@@ -1,0 +1,9 @@
+h1{
+    color: red;
+}
+.customCol{
+    background-color: #5c1616;
+    height: 200px;
+    margin: 20px;
+    /* margin-bottom: 10%; */
+}

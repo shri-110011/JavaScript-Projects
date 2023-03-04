@@ -1,0 +1,12 @@
+'<!doctype html>'+
+'<html>'+
+'<head>'+
+	'<title>Review Form</title>'+
+'</head>'+
+'<body>'+
+	'<form action="/review">'+
+		'<textarea type="textarea" id="ta1" name="ta1" rows="20" cols="60"></textarea>'+
+		'<input type="submit" value="Give Review">'+
+	'</form>'+
+'</body>'+
+'</html>'

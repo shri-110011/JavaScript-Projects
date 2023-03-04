@@ -1,0 +1,19 @@
+{
+  "Foods":[
+    {
+      "Name":"Vada",
+      "Type":"Snack",
+      "Price":"20"
+    },
+    {
+      "Name":"Carrot Halwa",
+      "Type":"Dessert",
+      "Price":"50"
+    },
+    {
+      "Name":"Biryani",
+      "Type":"MainCourse",
+      "Price":"120"
+    }
+  ]
+}

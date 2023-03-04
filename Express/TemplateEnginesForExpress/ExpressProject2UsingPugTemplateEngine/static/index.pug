@@ -1,0 +1,93 @@
+//- layout.pug is the parent template
+extends layout
+
+//- Note: h1= is the right syntax ot h1 = 
+//- Note: if we want to add variable inbetween a text then we do it as follows: #{title} title is the variable
+//- Note: //- are the unbuffered comments and // are buffered comments
+//- unbuffered comments won't appear on the html page
+//- buffered comments will appear on the html page
+//- | is the pipe symbol using which we can break  a long line of text into multiple lines in the pug file but it will be rendered in a single line in the browser
+//- . sign can also be used to break down a long line of text intead of the pipe(|) symbol
+//- - sign in - var name = "<em>A.Shrikant</em>" means the code followed by - is to be executed
+//- !{name} will make the html tag to show its effect rather printing it
+//- include directive is like including the code of a seperate .pug file here it is the show.pug file
+//- - sign is not to be used in conditional statements and loops for Pug but is optional in Jade
+//- mixin is like a function which can take parameters, in pug to call a mixin + symbol followed by the
+//- mixin name is to be used
+//- Only named blocks and mixins can appear at the top level of an extending template
+
+block content
+
+	h1= title
+	p Welcome to #{title}
+	//This is a buffered comment
+
+	div#wrapper.highlight 
+		p 
+			| I am using Express
+			| I am currently learning the pug template engine
+		p.
+			I am using Express
+			I am currently learning the pug template engine
+
+	- var name = "<em>A.Shrikant</em>"
+	p #{name}
+	p !{name}
+
+	a(href="/About")
+			img(src="/images/A.Shrikant photo.jpeg" alt="Image here")
+
+	include show.pug
+
+	- obj={name:"A.Shrikant", age:23}
+	- function greet(name){return "Hello "+name+" !"}
+
+	ul
+		li= obj.name
+		li= obj.name+" "+obj.age
+		li= greet(obj.name)
+
+	- names = ["Apple","Microsoft","Google"];
+	each name in names
+		li #{name}
+
+	mixin fetch(users)
+		ul
+			each user in users
+				li #{user}
+
+	-users = ["John", "Billy", "Mandy"];
+	+fetch(users)
+	-person = {name:"A.Shrikant", age:"23"};
+	-console.log(person.name)
+
+
+	- var retailers = ['Walmert', 'BestBuy', 'HomeDepot', 'Ikea', 'Tesco']
+	ul
+		each retailer in retailers 
+			li= retailer
+			//-Note there should be no space b/w li and = sign otherwise you will get error 
+
+	- var retailers = ['Walmert', 'BestBuy', 'HomeDepot', 'Ikea', 'Tesco']
+	ul
+		for retailer in retailers 
+			li= retailer
+
+	- var retailers = ['Walmert', 'BestBuy', 'HomeDepot', 'Ikea', 'Tesco']
+	ul
+		each retailer, index in retailers 
+			li= retailers[index+1]
+
+	ul
+		for val in [1,2,3,4,5] 
+			li= val
+
+	- var student = {"Maths": 80, "Science": 90, "English": 50, "History": 75} 
+	ul
+	for subject,score in student
+		li= subject+":"+score 
+
+
+
+
+

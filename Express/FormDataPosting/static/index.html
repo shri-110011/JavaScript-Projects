@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<title>Form</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<h1>Login Form</h1>
+				<form class="form-group" action="/userdata" method="post">
+					<label for="uname">Name</label>
+					<input class="form-control" type="text" id="uname" name="uname" required autocomplete="on" /><br><br>
+					<label for="pwd">Password</label>
+					<input class="form-control" type="password" id="pwd" name="pwd" required autocomplete="on"/><br><br>
+					<button class="btn btn-primary" type="submit">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
